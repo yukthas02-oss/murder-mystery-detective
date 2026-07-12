@@ -33,8 +33,11 @@ h3 {
     transform: scale(1.05);
 }
 #gameArea {
+    
     margin-top: 40px;
 }
+
+
 
 .section {
     background: #3d2f1e;
