@@ -1,9 +1,25 @@
 const startButton = document.getElementById("startButton");
 const story = document.getElementById("story");
 const gameArea = document.getElementById("gameArea");
+
+const knifeButton = document.getElementById("knifeBtn");
+const phoneButton = document.getElementById("phoneBtn");
+const shoeButton = document.getElementById("shoeBtn");
+
+const notebook = document.getElementById("notebook");
+
 gameArea.style.display = "none";
 
+let knifeCollected = false;
+let phoneCollected = false;
+let shoeCollected = false;
+
+
 startButton.addEventListener("click",startInvestigation);
+
+knifeButton.addEventListener("click", inspectKnife);
+phoneButton.addEventListener("click",inspectPhone);
+shoeButton.addEventListener("click",inspectShoe);
 
 function startInvestigation(){
     story.textContent = "A wealthy business man has been murdered in his mansion. Search for clues and uncover the truth! ";
@@ -12,25 +28,44 @@ function startInvestigation(){
     gameArea.style.display = "block";
   
 }
-const knifeButton = document.getElementById("knifeBtn");
-const notebook = document.getElementById("notebook");
-knifeButton.addEventListener("click", inspectKnife);
 
 function inspectKnife() {
 
-    notebook.textContent =
-        "Evidence Collected\n\n.... Bloody Knife\nThe fingerprints have been wiped clean.";
+         notebook.innerHTML += `
+        <hr>
+        <h4>🔪 Bloody Knife</h4>
+        <ul>
+            <li>Fingerprints have been wiped clean.</li>
+        </ul>
+    `;
+    }
 
-}
-const phoneButton = document.getElementById("phoneBtn");
-phoneButton.addEventListener("click",inspectPhone);
+
+
 
 function inspectPhone(){
-    notebook.textContent = "Evidence Collected\n\n....Victim's Phone\nAll the Data has been cleared.";
+    
+    
+     notebook.innerHTML += `
+        <hr>
+        <h4>📱 Victim's Phone</h4>
+        <ul>
+            <li>All the data has been cleared.</li>
+        </ul>
+    `;
 }
-const shoeButton = document.getElementById("shoeBtn");
-shoeButton.addEventListener("click",inspectShoe);
 
 function inspectShoe() {
-    notebook.textContent = "Evidence Collected\n\n....Victim'm Shoe\nNo fingerprints found"
+    
+
+     notebook.innerHTML += `
+        <hr>
+        <h4>📱 Victim's Phone</h4>
+        <ul>
+            <li>All the data has been cleared.</li>
+        </ul>
+    `;
 }
+
+
+
